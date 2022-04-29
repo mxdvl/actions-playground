@@ -16,7 +16,9 @@ jobs:
 
       - name: Info
         run: |
-          echo ${{ github.context }}
+          echo CONTEXT = ${{ github.context }}
+          echo EVENT = ${{ github.event }}
+          echo NUMBER = ${{ github.event.issue.number }}
 
       - name: Run deno script
         run: scripts/ci-deno.sh
