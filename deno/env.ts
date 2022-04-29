@@ -1,9 +1,3 @@
-import * as core from "https://cdn.skypack.dev/@actions/core?dts";
-import * as github from "https://cdn.skypack.dev/@actions/github?dts";
-
-console.log(core.getInput("token"));
-console.log(github.context);
-
 const token = Deno.env.get("GITHUB_TOKEN");
 if (!token) throw new Error("Missing GITHUB_TOKEN");
 

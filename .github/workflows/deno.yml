@@ -14,7 +14,7 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Compare Ophan components
+      - name: Run deno script
         run: scripts/ci-deno.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
