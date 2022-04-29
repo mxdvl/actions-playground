@@ -1,0 +1,14 @@
+{
+	"fmt": {
+		"files": {
+			"include": ["deno/"]
+		},
+		"options": {
+			"useTabs": true,
+			"lineWidth": 96,
+			"indentWidth": 4,
+			"singleQuote": false,
+			"proseWrap": "preserve"
+		}
+	}
+}

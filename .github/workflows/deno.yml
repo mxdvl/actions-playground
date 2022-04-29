@@ -1,0 +1,20 @@
+name: Deno
+on:
+  push:
+
+jobs:
+  deno:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.x
+
+      - name: Compare Ophan components
+        run: scripts/ci-deno.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
