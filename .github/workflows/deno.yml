@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Github JSON event
-        run: '${{ toJson(github.event) }}'
+        run: echo '${{ toJson(github.event) }}'
 
   deno:
     runs-on: ubuntu-20.04
