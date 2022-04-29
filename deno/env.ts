@@ -4,13 +4,7 @@ if (!token) throw new Error("Missing GITHUB_TOKEN");
 const path = Deno.env.get("GITHUB_EVENT_PATH");
 if (!path) throw new Error("Missing GITHUB_EVENT_PATH");
 
-Deno.run({
-	cmd: ["group", "This is my super group"],
-});
-
-Deno.run({
-	cmd: ["group", "This a weird sub-group"],
-});
+console.log("group", "This is my super group");
 
 /**
  * https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads
