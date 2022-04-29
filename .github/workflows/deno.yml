@@ -3,6 +3,15 @@ on:
   push:
 
 jobs:
+  info:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Info
+        run: |
+          echo CONTEXT = ${{ github.context }}
+          echo EVENT = "${{ toJson(github.event) }}"
+          echo NUMBER = ${{ github.event.issue.number }}
+
   deno:
     runs-on: ubuntu-20.04
     steps:
@@ -13,12 +22,6 @@ jobs:
         uses: denolib/setup-deno@v2
         with:
           deno-version: v1.x
-
-      - name: Info
-        run: |
-          echo CONTEXT = ${{ github.context }}
-          echo EVENT = ${{ toJson(github.event) }}
-          echo NUMBER = ${{ github.event.issue.number }}
 
       - name: Run deno script
         run: scripts/ci-deno.sh
