@@ -28,6 +28,7 @@ jobs:
           deno-version: v1.x
 
       - name: Run deno script
+        if: github.ref != 'refs/heads/main'
         run: scripts/ci-deno.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
