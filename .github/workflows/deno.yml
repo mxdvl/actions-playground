@@ -17,7 +17,7 @@ jobs:
       - name: Info
         run: |
           echo CONTEXT = ${{ github.context }}
-          echo EVENT = ${{ github.event }}
+          echo EVENT = ${{ toJson(github.event) }}
           echo NUMBER = ${{ github.event.issue.number }}
 
       - name: Run deno script
