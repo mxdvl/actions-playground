@@ -12,7 +12,7 @@ Deno.run({
 	cmd: ["which", "group"],
 });
 
-console.log("::group::My very super group")
+console.log("::group::My very super group");
 
 /**
  * https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads
@@ -32,7 +32,7 @@ console.log({ payload });
 const issue_number = (payload.issue || payload.pull_request || payload).number;
 console.log({ issue_number });
 
-console.log("::groupend::")
+console.log("::endgroup::");
 
 Deno.run({
 	cmd: ["which", "groupend"],
